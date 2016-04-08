@@ -32,9 +32,17 @@ div {
   height: 100px;
   top: calc(50% - 50px);
   width: 200px;
-
   background-color: limegreen;
   opacity: 0;
+  transition: all .5s;
+}
+
+.showbox {
+  height: 100px;
+  top: calc(50% - 50px);
+  width: 200px;
+  opacity: 100;
+  transition: all .5s;
 }
 
 .diamond {
@@ -45,6 +53,11 @@ div {
 
   background-color: hotpink;
   transform: rotate(45deg);
+  transition: all .5s linear;
+}
+
+.movein {
+  right: 55px;
 }
 
 .panel {
@@ -52,12 +65,15 @@ div {
   overflow: hidden;
   top: 50%;
   width: 250px;
-
   background-color: yellow;
   transform: translateY(-50%);
-
+  transition: all .3s linear;
   color: darkgoldenrod;
   text-align: center;
+}
+
+.collapse {
+  max-height: 0;
 }
 
 .panel h2 {
@@ -69,9 +85,37 @@ div {
   height: 100px;
   top: calc(50% - 50px);
   width: 100px;
-
   background-color: orange;
   border-radius: 50%;
+}
+
+.bounce {
+  animation: bounce 1s linear;
+}
+
+@keyframes bounce {
+
+  0% {
+    top: 45px;
+    right: -100px;
+  }
+
+  25% {
+    top: 10px;
+  }
+
+  60% {
+    top: 40px;
+  }
+
+  80% {
+    top: 10px;
+  }
+
+  100% {
+    top: 45px;
+    right: 150px;
+  }
 }
 
 .list {
@@ -98,4 +142,16 @@ div {
   overflow: hidden;
 
   color: mediumpurple;
+  animation: expand .5s forwards ease;
+}
+
+@keyframes expand {
+
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 1.5em;
+  }
 }
