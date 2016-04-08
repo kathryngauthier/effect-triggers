@@ -11,7 +11,7 @@ var $btnAppend = $('.btn-append');
 var $list = $('.list');
 
 $btnShowHide.on('click', function () {
-  $box.toggleClass('showbox');
+  $box.toggleClass('show');
 });
 
 $btnMove.on('click', function () {
